@@ -25,3 +25,53 @@ if [ $age -gt 18 ]; then
 else
   echo "You are not eligible to vote."
 fi
+
+
+#Write a Bash script that takes a string as input, and checks 
+#if the string contains the word "hello". If it does, the script should print a message saying 
+#"Found hello", and if it doesn't, 
+#the script should print a message saying "Did not find hello".
+
+echo "Please enter a word"
+read word
+if [[ $word == *"hello"* ]];
+then
+    echo "found $word"
+else
+    echo "Did not find $word"
+fi
+
+#Write a Bash script that checks if a command line argument is a directory, 
+#and if it is, prints a message saying "Argument is a directory", 
+#and if it isn't, prints a message saying "Argument is not a directory".
+
+
+# Check if a command line argument was provided
+if [ $# -eq 0 ]; then
+  echo "No argument provided"
+  exit 1
+fi
+
+# Check if the argument is a directory
+if [ -d "$1" ]; then
+  echo "Argument is a directory"
+else
+  echo "Argument is not a directory"
+fi
+
+
+#Write a Bash script that checks if a variable is empty, and if it is, prints a message saying 
+#"Variable is empty", and if it isn't, prints the value of the variable.
+
+# Set a variable
+my_variable=2
+
+# Check if the variable is empty
+if [ -z "$my_variable" ]; then
+  echo "Variable is empty"
+else
+  echo "Variable value is: $my_variable"
+fi
+
+
+echo "exit $?"
