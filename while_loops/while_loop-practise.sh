@@ -13,3 +13,14 @@ while true; do
         echo "Access denied"
     fi
     done
+
+#Write a Bash script that reads a file line by line until it 
+#finds a line that contains the word "done".
+
+while read line; do
+    #check if the line contains done
+    if echo "$line" | grep -q 'done'; then
+    echo "Found line with 'done': $line"
+    break
+    fi
+done < file.txt
